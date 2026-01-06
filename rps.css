@@ -1,1 +1,49 @@
 /* styling page for the rock, paper, scissor game */
+
+/* styles the body of our program */
+body {
+    font-family: monospace;
+    font-weight: bold;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* styles our h1 element */
+h1 {
+    font-size: 2.75rem;
+    color: hsl(0, 0%, 20%);
+}
+
+/* styles our choices (separates them from player display */
+.choices {
+    margin-bottom: 30px;
+}
+
+/* styles our buttons */
+.choices button {
+    font-size: 7rem;
+    min-width: 160px;
+    margin: 0 10px;
+    border-radius: 250px;
+    background-color: hsl(240, 100%, 30%);
+    cursor: pointer;
+    transition: background-colr 0.5s ease;
+}
+
+/* styles our buttons when hovered over */
+.choices button:hover {
+    background-color: hsl(240, 100%, 50%);
+}
+
+/* styles our player/computer displays */
+#playerDisplay, #computerDisplay {
+    font-size: 2.5rem;
+}
+
+/* styles our result display */
+#resultDisplay {
+    font-size: 5rem;
+    margin: 30px;
+}
