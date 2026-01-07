@@ -12,10 +12,12 @@ function playGame(playerChoice) {
 
     let result = "";
 
+    // catches if both player and computer chooses the same
     if(playerChoice === computerChoice) {
         result = "IT'S A TIE!";
     }
     else {
+        // different cases for potential wins, player vs computer scenario using ternary operator
         switch(playerChoice) {
             case "rock":
                 result = (computerChoice === "scissors") ? "YOU WIN!" : "YOU LOSE!";
@@ -29,7 +31,21 @@ function playGame(playerChoice) {
         }
     }
 
+    // update our displays with the choices and result
     playerDisplay.textContent = `PLAYER: ${playerChoice}`;
     computerDisplay.textContent = `COMPUTER: ${computerChoice}`;
     resultDisplay.textContent = result;
+
+    // resets result display so green or red wont be applied to a tie game
+    resultDisplay.classList.remove("greenText", "redText");
+
+    // switch case to change our win/lose text color
+    switch(result) {
+        case "YOU WIN!":
+            resultDisplay.classList.add("greenText");
+            break
+        case "YOU LOSE!":
+            resultDisplay.classList.add("redText");
+            break
+    }
 }
