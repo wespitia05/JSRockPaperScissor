@@ -4,6 +4,10 @@ const choices = ["rock", "paper", "scissors"];
 const playerDisplay = document.getElementById("playerDisplay");
 const computerDisplay = document.getElementById("computerDisplay");
 const resultDisplay = document.getElementById("resultDisplay");
+const playerScoreDisplay = document.getElementById("playerScoreDisplay");
+const computerScoreDisplay = document.getElementById("computerScoreDisplay");
+let playerScore = 0;
+let computerScore = 0;
 
 function playGame(playerChoice) {
     // this will have the computer randomly choose between 0-2
@@ -43,9 +47,13 @@ function playGame(playerChoice) {
     switch(result) {
         case "YOU WIN!":
             resultDisplay.classList.add("greenText");
+            playerScore++;
+            playerScoreDisplay.textContent = playerScore;
             break
         case "YOU LOSE!":
             resultDisplay.classList.add("redText");
+            computerScore++;
+            computerScoreDisplay.textContent = computerScore;
             break
     }
 }
